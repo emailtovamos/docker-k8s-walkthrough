@@ -12,11 +12,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
-func handleRequests() {
+func main() {
 	http.HandleFunc("/", homePage)
 	log.Fatal(http.ListenAndServe(":10000", nil))
-}
-
-func main() {
-	handleRequests()
 }
